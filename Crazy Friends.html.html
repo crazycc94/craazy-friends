@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta charset="UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crazy Friends</title>
+
+  
+  
+  <link rel="stylesheet" href="styles.css">
+
+  
+  <script src="scripts.js" defer="defer"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+
+</head><body>
+<!-- P�gina de inicio -->
+<div id="login-page">
+<h1>Bienvenido a Crazy Friends</h1>
+<button onclick="showRegister()">Reg�strate</button> <button onclick="showLogin()">Inicia Sesi�n</button> </div>
+
+<!-- P�gina principal -->
+<div id="main-page" style="display: none;"> <nav> <button onclick="openTab('agenda')">Agenda</button> <button onclick="openTab('chat')">Chat</button> <button onclick="openTab('videollamada')">Videollamada</button> <button onclick="openTab('comparte')">Comparte</button> <button onclick="openTab('mi-espacio')">Mi Espacio</button> </nav> </div>
+
+<script src="scripts.js" defer="defer"></script>
+<!-- Agenda -->
+<div id="agenda-tab" style="display: none;">
+<h2>Agenda</h2>
+<button onclick="createEvent()">Crear nuevo plan</button>
+<div id="events-list"><!-- Aquí se mostrarán los eventos creados --> </div>
+</div>
+
+<!-- Chat -->
+<div id="chat-tab" style="display: none;">
+<h2>Chat grupal</h2>
+<div id="messages"><!-- Aquí aparecerán los mensajes --> </div>
+<input id="message-input" placeholder="Escribe tu mensaje aquí" type="text"> <button onclick="sendMessage()">Enviar</button>
+</div>
+
+<!-- Videollamada -->
+<div id="videollamada-tab" style="display: none;">
+<h2>Videollamada</h2>
+<button onclick="joinVideoCall()">Unirse a la llamada</button> <button onclick="setVirtualBackground"></button></div>
+
+<!-- Comparte -->
+<div id="comparte-tab" style="display: none;">
+<h2>Comparte tu contenido</h2>
+<input id="media-input" type="file"> <button onclick="uploadMedia()">Subir</button>
+<div id="shared-content"><!-- Aquí se mostrarán los archivos multimedia subidos -->
+</div>
+</div>
+
+<!-- Mi Espacio -->
+<div id="mi-espacio-tab" style="display: none;">
+<h2>Mi Espacio</h2>
+<button onclick="editProfile()">Editar Perfil</button> <button onclick="uploadReel()">Subir Reel</button>
+<div id="reels-gallery"><!-- Aquí se mostrarán los reels subidos --> </div>
+</div>
+
+<!-- Contenedor de notificaciones -->
+
+</body></html>
