@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <title>scripts.js</title>
+
+  
+</head><body>
+// scripts.js
+function showRegister() { alert("Abriendo el formulario de
+registro..."); // Aquí puedes añadir lógica para mostrar el formulario
+de registro.
+}
+function showLogin() { alert("Abriendo el inicio de sesión..."); //
+Aquí puedes añadir lógica para mostrar el inicio de sesión.
+}
+function openTab(tabName) { alert(`Abriendo la pestaña: ${tabName}`);
+// Lógica para cambiar entre pestañas (Agenda, Chat, etc.).
+}
+// Crear un nuevo evento en la Agenda
+function createEvent() { const eventName = prompt("Introduce el nombre
+del plan:"); const eventDate = prompt("Introduce la fecha:"); const
+eventLocation = prompt("Introduce el lugar:"); const eventPhoto =
+prompt("Introduce el enlace de la foto:"); const eventHTML = `
+<div class="event">
+<h3>${eventName}</h3>
+<p>Fecha: ${eventDate}</p>
+<p>Lugar: ${eventLocation}</p>
+<img src="$%7BeventPhoto%7D" alt="${eventName}" style="width: 100px;"> </div>
+
+`; document.getElementById('events-list').innerHTML += eventHTML;
+}
+// Enviar un mensaje al chat
+function sendMessage() { const input =
+document.getElementById('message-input'); const message = input.value;
+if (message) { const messageHTML = `
+<p><strong>Usuario:</strong> ${message}</p>
+
+`; document.getElementById('messages').innerHTML += messageHTML;
+input.value = ''; // Limpiar el campo de texto }
+}
+// Función para unirse a la videollamada
+function joinVideoCall() { alert("Conectando a la videollamada..."); //
+Aquí podrías integrar una API de videollamada como Jitsi Meet.
+}
+// Configurar fondo virtual
+function setVirtualBackground() { const background = prompt("Introduce
+la URL del fondo virtual:"); alert(`Fondo virtual configurado:
+${background}`); // Podrías añadir lógica para aplicar el fondo si
+integras una API.
+}
+// Subir multimedia
+function uploadMedia() { const media =
+document.getElementById('media-input').files[0]; if (media) { const
+mediaHTML = `
+<div>
+<p>Archivo: ${media.name}</p>
+</div>
+
+`; document.getElementById('shared-content').innerHTML += mediaHTML; }
+else { alert("Por favor, selecciona un archivo para subir."); }
+}
+// Editar perfil
+function editProfile() { const newName = prompt("Introduce tu nuevo
+nombre:"); alert(`Tu nombre ha sido actualizado a: ${newName}`); //
+Aquí puedes añadir lógica para actualizar el perfil del usuario.
+}
+// Subir Reel
+function uploadReel() { const reelURL = prompt("Introduce la URL del
+video:"); const reelHTML = `
+<div style="width: 150px; height: auto; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+<video src="$%7BreelURL%7D" controls="" style="width: 100%;"></video> </div>
+
+`; document.getElementById('reels-gallery').innerHTML += reelHTML;
+}
+function openTab(tabName) {
+    const tabs = document.querySelectorAll('#content &gt; div');
+    tabs.forEach(tab =&gt; tab.style.display = 'none'); // Ocultar todas las pestañas
+
+    const activeTab = document.getElementById(`${tabName}-tab`);
+    activeTab.style.display = 'block';
+    activeTab.classList.add('fade-in'); // Aplicar animación
+}
+</body></html>
